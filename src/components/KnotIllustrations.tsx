@@ -74,17 +74,17 @@ const BowlineIllustration: FC<StepIllustrationProps> = ({ stepNumber, className 
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "images/Bowline1.png";
+        return "public/images/Bowline1.png";
       case 2:
-        return "images/Bowline2.png";
+        return "public/images/Bowline2.png";
       case 3:
-        return "images/Bowline3.png";
+        return "public/images/Bowline3.png";
       case 4:
-        return "images/Bowline4.png";
+        return "public/images/Bowline4.png";
       case 5:
-        return "images/Bowline5.png";
+        return "public/images/Bowline5.png";
       default:
-        return "images/Bowline5.png";
+        return "public/images/Bowline5.png";
     }
   };
 
@@ -110,13 +110,13 @@ const CloveHitchIllustration: FC<StepIllustrationProps> = ({ stepNumber, classNa
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "images/clovehitch1.jpg";
+        return "public/images/clovehitch1.jpg";
       case 2:
-        return "images/clovehitch2.jpg";
+        return "public/images/clovehitch2.jpg";
       case 3:
-        return "images/clovehitch3.jpg";
+        return "public/images/clovehitch3.jpg";
       default:
-        return "images/clovehitch3.jpg";
+        return "public/images/clovehitch3.jpg";
     }
   };
 
@@ -140,15 +140,15 @@ const CleatHitchIllustration: FC<StepIllustrationProps> = ({ stepNumber, classNa
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "images/cleathitch1.jpg";
+        return "public/images/cleathitch1.jpg";
       case 2:
-        return "images/cleathitch2.jpg";
+        return "public/images/cleathitch2.jpg";
       case 3:
-        return "images/cleathitch3.jpg";
+        return "public/images/cleathitch3.jpg";
       case 4:
-        return "images/cleathitch4.jpg";
+        return "public/images/cleathitch4.jpg";
       default:
-        return "images/cleathitch4.jpg";
+        return "public/images/cleathitch4.jpg";
     }
   };
 
