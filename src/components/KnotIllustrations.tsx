@@ -206,13 +206,13 @@ const FigureEightIllustration: FC<StepIllustrationProps> = ({ stepNumber, classN
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Figure-eight_knot_tying_1.jpg/640px-Figure-eight_knot_tying_1.jpg";
+        return "/images/figureeight1.png";
       case 2:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Figure-eight_knot_tying_2.jpg/640px-Figure-eight_knot_tying_2.jpg";
+        return "/images/figureeight2.png";
       case 3:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Figure-eight_knot.jpg/640px-Figure-eight_knot.jpg";
+        return "/images/figureeight3.png";
       default:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Figure-eight_knot.jpg/640px-Figure-eight_knot.jpg";
+        return "/images/figureeight3.png";
     }
   };
 
