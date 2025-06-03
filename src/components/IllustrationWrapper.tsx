@@ -22,7 +22,7 @@ export const IllustrationWrapper: FC<IllustrationWrapperProps> = ({
       exit={{ opacity: 0 }}
       key={`${title}-step-${stepNumber}`}
       transition={{ duration: 0.3 }}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}
     >
       {children}
       <div className="absolute bottom-4 left-4 z-10">

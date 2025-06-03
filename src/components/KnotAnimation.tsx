@@ -37,7 +37,7 @@ export const KnotAnimation = ({ currentStep, knotId }: KnotAnimationProps) => {
       initial={{ opacity: 0.8 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}
     >
       <AnimatePresence mode="wait">
         {isLoading ? (

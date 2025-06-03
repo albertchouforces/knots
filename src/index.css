@@ -52,16 +52,29 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   background-color: white;
   padding: 0.5rem;
+  box-sizing: border-box;
 }
 
 .knot-image {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 100% !important;
+  max-height: 100% !important;
   width: auto !important;
   height: auto !important;
   object-fit: contain !important;
   margin: 0 auto !important;
   display: block !important;
+  position: relative !important;
+}
+
+.knot-image-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .LazyLoadImage-wrapper {
@@ -70,6 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center !important;
   width: 100% !important;
   height: 100% !important;
+  position: relative !important;
 }
 
 @keyframes highlight {
@@ -120,6 +134,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .knot-image-container img {
@@ -129,6 +144,8 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 95%;
   object-fit: contain;
   border-radius: 0.25rem;
+  display: block;
+  margin: 0 auto;
 }
 
 .knot-image-active {
