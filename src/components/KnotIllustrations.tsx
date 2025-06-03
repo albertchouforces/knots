@@ -338,13 +338,13 @@ const HalfHitchIllustration: FC<StepIllustrationProps> = ({ stepNumber, classNam
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Half_hitch_step_1.jpg/640px-Half_hitch_step_1.jpg";
+        return "/images/halfhitch1.png";
       case 2:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Half_hitch_step_2.jpg/640px-Half_hitch_step_2.jpg";
+        return "/images/halfhitch1.png";
       case 3:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Half_hitch.jpg/640px-Half_hitch.jpg";
+        return "/images/halfhitch2.png";
       default:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Half_hitch.jpg/640px-Half_hitch.jpg";
+        return "/images/halfhitch2.png";
     }
   };
 
