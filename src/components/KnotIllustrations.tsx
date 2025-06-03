@@ -110,13 +110,13 @@ const CloveHitchIllustration: FC<StepIllustrationProps> = ({ stepNumber, classNa
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "/images/clovehitch1.jpg";
+        return "/images/clovehitch1.png";
       case 2:
-        return "/images/clovehitch2.jpg";
+        return "/images/clovehitch2.png";
       case 3:
-        return "/images/clovehitch3.jpg";
+        return "/images/clovehitch3.png";
       default:
-        return "/images/clovehitch3.jpg";
+        return "/images/clovehitch3.png";
     }
   };
 
