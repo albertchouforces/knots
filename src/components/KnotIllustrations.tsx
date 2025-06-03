@@ -140,15 +140,15 @@ const CleatHitchIllustration: FC<StepIllustrationProps> = ({ stepNumber, classNa
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "/images/cleathitch1.jpg";
+        return "/images/cleathitch1.png";
       case 2:
-        return "/images/cleathitch2.jpg";
+        return "/images/cleathitch2.png";
       case 3:
-        return "/images/cleathitch3.jpg";
+        return "/images/cleathitch3.png";
       case 4:
-        return "/images/cleathitch4.jpg";
+        return "/images/cleathitch4.png";
       default:
-        return "/images/cleathitch4.jpg";
+        return "/images/cleathitch4.png";
     }
   };
 
