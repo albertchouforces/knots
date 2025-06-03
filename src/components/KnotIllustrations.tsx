@@ -54,18 +54,21 @@ interface StepIllustrationProps {
 const KnotImageWrapper: FC<{src: string; alt: string; className?: string}> = ({ src, alt, className = "" }) => {
   return (
     <div className={`rounded-lg overflow-hidden knot-image-container ${className}`}>
-      <LazyLoadImage
-        src={src}
-        alt={alt}
-        effect="blur"
-        className="w-auto h-auto max-w-full max-h-full object-contain knot-image"
-        wrapperClassName="w-full h-full flex items-center justify-center p-2"
-        placeholder={
-          <div className="animate-pulse flex items-center justify-center w-full h-full min-h-[200px] bg-gray-100 rounded">
-            <div className="w-12 h-12 border-2 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
-          </div>
-        }
-      />
+      <div className="w-full h-full flex items-center justify-center">
+        <LazyLoadImage
+          src={src}
+          alt={alt}
+          effect="blur"
+          className="w-auto h-auto max-w-full max-h-full object-contain knot-image"
+          wrapperClassName="flex items-center justify-center p-2"
+          placeholderSrc="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+          placeholder={
+            <div className="animate-pulse flex items-center justify-center w-full h-full min-h-[200px] bg-gray-100 rounded">
+              <div className="w-12 h-12 border-2 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+            </div>
+          }
+        />
+      </div>
     </div>
   );
 };

@@ -37,6 +37,7 @@ export const KnotAnimation = ({ currentStep, knotId }: KnotAnimationProps) => {
       initial={{ opacity: 0.8 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
     >
       <AnimatePresence mode="wait">
         {isLoading ? (
@@ -59,11 +60,13 @@ export const KnotAnimation = ({ currentStep, knotId }: KnotAnimationProps) => {
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="w-full h-full relative flex items-center justify-center p-4">
-              <KnotIllustration 
-                knotId={knotId} 
-                stepNumber={currentStep} 
-                className="w-full h-full" 
-              />
+              <div className="w-full h-full flex items-center justify-center">
+                <KnotIllustration 
+                  knotId={knotId} 
+                  stepNumber={currentStep} 
+                  className="w-full h-full flex items-center justify-center" 
+                />
+              </div>
               <div 
                 className={`absolute top-4 right-4 bg-blue-600 bg-opacity-80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium border border-blue-400 border-opacity-30 shadow-md ${isAnimating ? 'animate-pulse' : ''}`}
               >
