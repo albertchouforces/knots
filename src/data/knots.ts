@@ -2,6 +2,66 @@ import { Knot } from '../types';
 
 export const knots: Knot[] = [
   {
+    id: 'rolling-hitch',
+    name: 'Rolling Hitch',
+    description: 'A friction hitch used to attach a line to a rod, pole, or another line. The rolling hitch grips well under tension yet can be easily adjusted when slack.',
+    difficulty: 'intermediate',
+    useCases: [
+      'Attaching a line to a pole or spar under tension',
+      'Creating an adjustable line that can be moved when not under load',
+      'Securing a towline to another rope',
+      'Replacing a broken cleat by tying to a rail or spar'
+    ],
+    steps: [
+      {
+        description: 'Bring the working end over and around the pole/rope (away from the direction of expected load).',
+        imagePosition: '0%',
+      },
+      {
+        description: 'Wrap the working end around a second time, parallel to the first turn.',
+        imagePosition: '20%',
+      },
+      {
+        description: 'Bring the working end over the standing part, then around the pole/rope in the opposite direction.',
+        imagePosition: '40%',
+      },
+      {
+        description: 'Continue bringing the working end under itself and over the pole/rope.',
+        imagePosition: '60%',
+      },
+      {
+        description: 'Pull the working end to tighten the knot, creating friction against the pole/rope.',
+        imagePosition: '80%',
+      }
+    ]
+  },
+  {
+    id: 'overhand-knot',
+    name: 'Overhand Knot',
+    description: 'The most basic of all knots and the foundation for many others. It\'s a simple stopper knot that prevents a rope from sliding through a hole or device.',
+    difficulty: 'beginner',
+    useCases: [
+      'Creating a simple stopper at the end of a rope',
+      'Preventing rope ends from fraying',
+      'Serving as the starting point for more complex knots',
+      'Securing the end of a thread when sewing'
+    ],
+    steps: [
+      {
+        description: 'Form a simple loop by crossing the working end over the standing part.',
+        imagePosition: '0%',
+      },
+      {
+        description: 'Tuck the working end through the loop.',
+        imagePosition: '33%',
+      },
+      {
+        description: 'Pull both ends to tighten the knot.',
+        imagePosition: '66%',
+      }
+    ]
+  },
+  {
     id: 'bowline',
     name: 'Bowline',
     description: 'The bowline creates a fixed loop at the end of a line. It\'s known as the "king of knots" because of its importance and utility.',
@@ -65,7 +125,7 @@ export const knots: Knot[] = [
     id: 'cleat-hitch',
     name: 'Cleat Hitch',
     description: 'A secure method to fasten a line to a cleat, commonly used in boating and sailing.',
-    difficulty: 'beginner',
+    difficulty: 'intermediate',
     useCases: [
       'Securing a boat to a dock cleat',
       'Fastening halyards on sailboats',
@@ -181,7 +241,7 @@ export const knots: Knot[] = [
     id: 'anchor-hitch',
     name: 'Anchor Hitch',
     description: 'A secure knot for attaching a line to an anchor or ring, designed to resist slipping under load.',
-    difficulty: 'intermediate',
+    difficulty: 'advanced',
     useCases: [
       'Securing a line to an anchor',
       'Attaching a rope to a ring or shackle',
@@ -309,7 +369,7 @@ export const knots: Knot[] = [
     id: 'stopper-knot',
     name: 'Stopper Knot',
     description: 'A knot tied at the end of a rope to prevent it from unraveling or passing through a hole or ring.',
-    difficulty: 'beginner',
+    difficulty: 'intermediate',
     useCases: [
       'Preventing a rope from running through a pulley or fairlead',
       'Creating a handhold at the end of a rope',
@@ -318,19 +378,27 @@ export const knots: Knot[] = [
     ],
     steps: [
       {
-        description: 'Create a small loop near the end of the rope.',
+        description: 'Form a small loop near the end of the rope, with the working end crossing over the standing part.',
         imagePosition: '0%',
       },
       {
-        description: 'Wrap the working end around the standing part once.',
-        imagePosition: '33%',
+        description: 'Bring the working end around behind the standing part.',
+        imagePosition: '20%',
       },
       {
-        description: 'Pass the working end through the loop.',
-        imagePosition: '66%',
+        description: 'Continue bringing the working end around and pass it through the initial loop from behind.',
+        imagePosition: '40%',
       },
       {
-        description: 'Pull tight by holding the loop and pulling on the standing part.',
+        description: 'Pull the working end through the loop to form the first pass.',
+        imagePosition: '60%',
+      },
+      {
+        description: 'Pass the working end through the newly formed loop a second time to strengthen the knot.',
+        imagePosition: '80%',
+      },
+      {
+        description: 'Tighten the knot by pulling the working end while holding the standing part firmly.',
         imagePosition: '100%',
       }
     ]
