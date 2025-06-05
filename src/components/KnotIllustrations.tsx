@@ -239,15 +239,15 @@ const SheetBendIllustration: FC<StepIllustrationProps> = ({ stepNumber, classNam
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Sheet_bend_tying_1.jpg/640px-Sheet_bend_tying_1.jpg";
+        return "/images/sheetbend1.png";
       case 2:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sheet_bend_tying_2.jpg/640px-Sheet_bend_tying_2.jpg";
+        return "/images/sheetbend2.png";
       case 3:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sheet_bend_tying_3.jpg/640px-Sheet_bend_tying_3.jpg";
+        return "/images/sheetbend3.png";
       case 4:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Sheet_bend.jpg/640px-Sheet_bend.jpg";
+        return "/images/sheetbend3.png";
       default:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Sheet_bend.jpg/640px-Sheet_bend.jpg";
+        return "/images/sheetbend3.png";
     }
   };
 
@@ -374,17 +374,17 @@ const TruckersHitchIllustration: FC<StepIllustrationProps> = ({ stepNumber, clas
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Truckers_hitch_step_1.jpg/640px-Truckers_hitch_step_1.jpg";
+        return "/images/truckershitch1.png";
       case 2:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Truckers_hitch_step_2.jpg/640px-Truckers_hitch_step_2.jpg";
+        return "/images/truckershitch2.png";
       case 3:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Truckers_hitch_step_3.jpg/640px-Truckers_hitch_step_3.jpg";
+        return "/images/truckershitch3.png";
       case 4:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Truckers_hitch_step_4.jpg/640px-Truckers_hitch_step_4.jpg";
+        return "/images/truckershitch4.png";
       case 5:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Truckers_hitch.jpg/640px-Truckers_hitch.jpg";
+        return "/images/truckershitch5.png";
       default:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Truckers_hitch.jpg/640px-Truckers_hitch.jpg";
+        return "/images/truckershitch5.png";
     }
   };
 
@@ -410,23 +410,33 @@ const StopperKnotIllustration: FC<StepIllustrationProps> = ({ stepNumber, classN
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Stopper_knot_step_1.jpg/640px-Stopper_knot_step_1.jpg";
+        return "/images/stopperknot1.png";
       case 2:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Stopper_knot_step_2.jpg/640px-Stopper_knot_step_2.jpg";
+        return "/images/stopperknot1.png";
       case 3:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stopper_knot_step_3.jpg/640px-Stopper_knot_step_3.jpg";
+        // First loop-passing step
+        return "/images/stopperknot2.png";
       case 4:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Stopper_knot.jpg/640px-Stopper_knot.jpg";
+        // Progress from step 3, partially tightened
+        return "/images/stopperknot3.png";
+      case 5:
+        // Second loop-passing step
+        return "/images/stopperknot4.png";
+      case 6:
+        // Completed knot
+        return "/images/stopperknot5.png";
       default:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Stopper_knot.jpg/640px-Stopper_knot.jpg";
+        return "/images/stopperknot5.png";
     }
   };
 
   const stepDescription = {
-    1: "Create a small loop near the end",
-    2: "Wrap working end around standing part",
-    3: "Pass end through the loop",
-    4: "Pull tight to form stopper knot"
+    1: "Form a small loop with the working end crossing over",
+    2: "Bring the working end around behind the standing part",
+    3: "Pass the working end through the initial loop from behind",
+    4: "Pull the working end through to form the first pass",
+    5: "Pass through the newly formed loop a second time",
+    6: "Tighten by pulling the working end and standing part"
   }[stepNumber] || "Complete the stopper knot";
 
   return (

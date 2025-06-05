@@ -322,11 +322,11 @@ export const knots: Knot[] = [
         imagePosition: '0%',
       },
       {
-        description: 'Wrap the working end around the standing part three times.',
+        description: 'Wrap the working end around the standing part once.',
         imagePosition: '33%',
       },
       {
-        description: 'Pass the working end through the small loop.',
+        description: 'Pass the working end through the loop.',
         imagePosition: '66%',
       },
       {
