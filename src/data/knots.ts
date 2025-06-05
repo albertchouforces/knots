@@ -190,20 +190,28 @@ export const knots: Knot[] = [
     ],
     steps: [
       {
-        description: 'Pass the working end through the ring or around the object.',
+        description: 'Wrap the working end twice around the ring or post.',
         imagePosition: '0%',
       },
       {
-        description: 'Wrap the working end around the standing part.',
-        imagePosition: '25%',
+        description: 'Bring the working end over the standing part.',
+        imagePosition: '16.6%',
       },
       {
-        description: 'Pass the working end through the loop created against the ring.',
+        description: 'Pass the working end under itself and the standing part.',
+        imagePosition: '33.3%',
+      },
+      {
+        description: 'Continue pulling the working end through.',
         imagePosition: '50%',
       },
       {
-        description: 'Pass the working end through the loop just formed and tighten.',
-        imagePosition: '75%',
+        description: 'Pass the working end under itself again to lock the knot.',
+        imagePosition: '66.6%',
+      },
+      {
+        description: 'Pull all parts tight to complete the anchor hitch.',
+        imagePosition: '83.3%',
       }
     ]
   },
