@@ -180,15 +180,15 @@ const ReefKnotIllustration: FC<StepIllustrationProps> = ({ stepNumber, className
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Reef_knot_step_1.jpg/640px-Reef_knot_step_1.jpg";
+        return "/images/reefknot1.png";
       case 2:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Reef_knot_step_2.jpg/640px-Reef_knot_step_2.jpg";
+        return "/images/reefknot2.png";
       case 3:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Reef_knot_step_3.jpg/640px-Reef_knot_step_3.jpg";
+        return "/images/reefknot3.png";
       case 4:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Reef_knot.jpg/640px-Reef_knot.jpg";
+        return "/images/reefknot4.png";
       default:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Reef_knot.jpg/640px-Reef_knot.jpg";
+        return "/images/reefknot4.png";
     }
   };
 
@@ -348,13 +348,13 @@ const HalfHitchIllustration: FC<StepIllustrationProps> = ({ stepNumber, classNam
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Half_hitch_step_1.jpg/640px-Half_hitch_step_1.jpg";
+        return "/images/halfhitch1.png";
       case 2:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Half_hitch_step_2.jpg/640px-Half_hitch_step_2.jpg";
+        return "/images/halfhitch1.png";
       case 3:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Half_hitch.jpg/640px-Half_hitch.jpg";
+        return "/images/halfhitch2.png";
       default:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Half_hitch.jpg/640px-Half_hitch.jpg";
+        return "/images/halfhitch2.png";
     }
   };
 
