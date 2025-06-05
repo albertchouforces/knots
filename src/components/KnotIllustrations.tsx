@@ -34,6 +34,10 @@ export const KnotIllustration: FC<KnotIllustrationProps> = ({ knotId, stepNumber
       return <TruckersHitchIllustration stepNumber={stepNumber} className={className} />;
     case 'stopper-knot':
       return <StopperKnotIllustration stepNumber={stepNumber} className={className} />;
+    case 'rolling-hitch':
+      return <RollingHitchIllustration stepNumber={stepNumber} className={className} />;
+    case 'overhand-knot':
+      return <OverhandKnotIllustration stepNumber={stepNumber} className={className} />;
     default:
       return (
         <div className={`flex items-center justify-center rounded-lg overflow-hidden ${className}`}>
@@ -444,6 +448,72 @@ const StopperKnotIllustration: FC<StepIllustrationProps> = ({ stepNumber, classN
       <KnotImageWrapper 
         src={getStepImageUrl(stepNumber)} 
         alt={`Stopper knot step ${stepNumber}: ${stepDescription}`} 
+      />
+    </IllustrationWrapper>
+  );
+};
+
+const RollingHitchIllustration: FC<StepIllustrationProps> = ({ stepNumber, className = "" }) => {
+  const getStepImageUrl = (step: number) => {
+    switch (step) {
+      case 1:
+        return "/images/rollinghitch1.png";
+      case 2:
+        return "/images/rollinghitch2.png";
+      case 3:
+        return "/images/rollinghitch3.png";
+      case 4:
+        return "/images/rollinghitch4.png";
+      case 5:
+        return "/images/rollinghitch5.png";
+      default:
+        return "/images/rollinghitch5.png";
+    }
+  };
+
+  const stepDescription = {
+    1: "Bring the working end over and around the pole/rope",
+    2: "Wrap around a second time, parallel to the first turn",
+    3: "Bring the working end over the standing part",
+    4: "Continue under itself and over the pole/rope",
+    5: "Pull tight to create friction against the pole/rope"
+  }[stepNumber] || "Complete the rolling hitch";
+
+  return (
+    <IllustrationWrapper title="Rolling Hitch" stepNumber={stepNumber} className={className}>
+      <KnotImageWrapper 
+        src={getStepImageUrl(stepNumber)} 
+        alt={`Rolling hitch step ${stepNumber}: ${stepDescription}`} 
+      />
+    </IllustrationWrapper>
+  );
+};
+
+const OverhandKnotIllustration: FC<StepIllustrationProps> = ({ stepNumber, className = "" }) => {
+  const getStepImageUrl = (step: number) => {
+    switch (step) {
+      case 1:
+        return "/images/overhand1.png";
+      case 2:
+        return "/images/overhand2.png";
+      case 3:
+        return "/images/overhand3.png";
+      default:
+        return "/images/overhand3.png";
+    }
+  };
+
+  const stepDescription = {
+    1: "Form a loop by crossing the working end over the standing part",
+    2: "Tuck the working end through the loop",
+    3: "Pull both ends to tighten the knot"
+  }[stepNumber] || "Complete the overhand knot";
+
+  return (
+    <IllustrationWrapper title="Overhand Knot" stepNumber={stepNumber} className={className}>
+      <KnotImageWrapper 
+        src={getStepImageUrl(stepNumber)} 
+        alt={`Overhand knot step ${stepNumber}: ${stepDescription}`} 
       />
     </IllustrationWrapper>
   );
