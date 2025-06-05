@@ -311,15 +311,15 @@ const RoundTurnTwoHalfHitchesIllustration: FC<StepIllustrationProps> = ({ stepNu
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Round_turn_two_half_hitches_step_1.jpg/640px-Round_turn_two_half_hitches_step_1.jpg";
+        return "/images/RoundTurnTwoHalfHitches1.png";
       case 2:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Round_turn_two_half_hitches_step_2.jpg/640px-Round_turn_two_half_hitches_step_2.jpg";
+        return "/images/RoundTurnTwoHalfHitches2.png";
       case 3:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Round_turn_two_half_hitches_step_3.jpg/640px-Round_turn_two_half_hitches_step_3.jpg";
+        return "/images/RoundTurnTwoHalfHitches3.png";
       case 4:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Round_turn_two_half_hitches.jpg/640px-Round_turn_two_half_hitches.jpg";
+        return "/images/RoundTurnTwoHalfHitches4.png";
       default:
-        return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Round_turn_two_half_hitches.jpg/640px-Round_turn_two_half_hitches.jpg";
+        return "/images/RoundTurnTwoHalfHitches4.png";
     }
   };
 
