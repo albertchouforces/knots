@@ -74,7 +74,7 @@ export const HomePage = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.2 }}
         >
-          KnotCraft
+          Naval Knots
         </motion.h1>
         <motion.p 
           className="text-lg text-gray-600 max-w-2xl"
