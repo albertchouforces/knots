@@ -40,10 +40,6 @@ export const KnotDetailPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <Link to="/" className="inline-flex items-center text-blue-600 hover:underline mb-6">
-        <ArrowLeft size={18} className="mr-1" /> Back to all knots
-      </Link>
-      
       <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
         <div className="p-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-2 font-display">{knot.name}</h1>
@@ -54,6 +50,8 @@ export const KnotDetailPage = () => {
               <KnotAnimation 
                 currentStep={currentStep}
                 knotId={knot.id}
+                totalSteps={knot.steps.length}
+                onStepChange={setCurrentStep}
                 key={`${knot.id}-animation-${currentStep}`}
               />
               
@@ -120,6 +118,16 @@ export const KnotDetailPage = () => {
             </div>
           </div>
         </div>
+      </div>
+      
+      <div className="flex justify-center mt-8 mb-4">
+        <Link 
+          to="/" 
+          className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-md hover:bg-blue-700 transition-all duration-200 group"
+        >
+          <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-1 transition-transform duration-200" /> 
+          Back to all knots
+        </Link>
       </div>
     </div>
   );

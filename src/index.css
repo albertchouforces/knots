@@ -247,3 +247,13 @@ h1, h2, h3, h4, h5, h6 {
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+
+/* Auto-play progress bar styles */
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.progress-animation {
+  animation: progress linear forwards;
+}
