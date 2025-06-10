@@ -32,7 +32,7 @@ export const IllustrationWrapper: FC<IllustrationWrapperProps> = ({
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          {title} - Step {stepNumber}
+          {title}
         </motion.div>
       </div>
     </motion.div>

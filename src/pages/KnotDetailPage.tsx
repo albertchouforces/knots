@@ -1,19 +1,111 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { knots } from '../data/knots';
 import { KnotStep } from '../components/KnotStep';
 import { KnotAnimation } from '../components/KnotAnimation';
 import { UseCasesList } from '../components/UseCasesList';
+import { AutoPlayControls } from '../components/AutoPlayControls';
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const KnotDetailPage = () => {
   const { id } = useParams<{ id: string }>();
   const [currentStep, setCurrentStep] = useState(1);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [intervalTime, setIntervalTime] = useState(() => {
+    // Load saved interval time from localStorage
+    const savedTime = localStorage.getItem('knotIntervalTime');
+    return savedTime ? parseInt(savedTime, 10) : 10; // Default 10 seconds
+  });
+  const [timeLeft, setTimeLeft] = useState(intervalTime);
+  
+  // Use refs to maintain state during renders
+  const isPlayingRef = useRef(false);
+  const timerRef = useRef<number | null>(null);
+  const lastStateChangeTimeRef = useRef(Date.now());
+  
   const knot = knots.find(k => k.id === id);
 
+  // Toggle play/pause state
+  const togglePlay = () => {
+    const now = Date.now();
+    // Prevent rapid state changes (debounce-like behavior)
+    if (now - lastStateChangeTimeRef.current < 300) return;
+    
+    lastStateChangeTimeRef.current = now;
+    
+    // Toggle the play state in both the ref and state
+    isPlayingRef.current = !isPlayingRef.current;
+    setIsPlaying(!isPlaying);
+    
+    if (!isPlaying) {
+      // Reset timer when starting
+      setTimeLeft(intervalTime);
+    }
+  };
+
+  // Handle the auto-play timer logic
+  useEffect(() => {
+    // Clear any existing timer first
+    if (timerRef.current !== null) {
+      window.clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+    
+    // Only set up timer if we're playing
+    if (isPlayingRef.current) {
+      timerRef.current = window.setInterval(() => {
+        setTimeLeft((prev) => {
+          if (prev <= 1) {
+            // Move to next step when timer reaches 0
+            if (currentStep < (knot?.steps.length || 0)) {
+              setCurrentStep(currentStep + 1);
+            } else {
+              // Loop back to step 1 when reaching the end
+              setCurrentStep(1);
+            }
+            return intervalTime; // Reset timer for next step
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    }
+    
+    // Clean up timer on unmount
+    return () => {
+      if (timerRef.current !== null) {
+        window.clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
+  }, [isPlaying, currentStep, intervalTime, knot?.steps.length]);
+
+  // Make sure isPlayingRef and isPlaying stay in sync
+  useEffect(() => {
+    isPlayingRef.current = isPlaying;
+  }, [isPlaying]);
+
+  // Handle step transitions without resetting play state
+  useEffect(() => {
+    setTimeLeft(intervalTime);
+  }, [currentStep, intervalTime]);
+
+  // Reset state when knot changes
   useEffect(() => {
     setCurrentStep(1);
-  }, [id]);
+    setIsPlaying(false);
+    isPlayingRef.current = false;
+    setTimeLeft(intervalTime);
+    
+    if (timerRef.current !== null) {
+      window.clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+  }, [id, intervalTime]);
+
+  // Save interval time to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('knotIntervalTime', intervalTime.toString());
+  }, [intervalTime]);
 
   if (!knot) {
     return (
@@ -47,15 +139,30 @@ export const KnotDetailPage = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:items-start">
             <div>
-              <KnotAnimation 
-                currentStep={currentStep}
-                knotId={knot.id}
-                totalSteps={knot.steps.length}
-                onStepChange={setCurrentStep}
-                key={`${knot.id}-animation-${currentStep}`}
-              />
+              {/* Animation component - now without built-in controls */}
+              <div className="relative w-full rounded-lg overflow-hidden shadow-lg knot-animation-container bg-gray-50 flex flex-col">
+                <KnotAnimation 
+                  currentStep={currentStep}
+                  knotId={knot.id}
+                  totalSteps={knot.steps.length}
+                  onStepChange={setCurrentStep}
+                  key={`${knot.id}-animation`}
+                />
+                
+                {/* Detached controls with its own state */}
+                <AutoPlayControls 
+                  isPlaying={isPlaying}
+                  togglePlay={togglePlay}
+                  intervalTime={intervalTime}
+                  setIntervalTime={setIntervalTime}
+                  currentStep={currentStep}
+                  totalSteps={knot.steps.length}
+                  timeLeft={timeLeft}
+                  looping={true}
+                />
+              </div>
               
-              <div className="flex justify-between items-center mt-4">
+              <div className="flex justify-between items-center mt-2">
                 <button 
                   onClick={handlePreviousStep}
                   disabled={currentStep === 1}
