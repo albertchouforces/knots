@@ -17,7 +17,7 @@ export const KnotAnimation = ({ currentStep, knotId, totalSteps, onStepChange }:
   const [intervalTime, setIntervalTime] = useState(10); // Default 10 seconds
   const [timeLeft, setTimeLeft] = useState(intervalTime);
   const prevStep = useRef(currentStep);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<number | null>(null);
   
   // Handle play/pause toggle
   const togglePlay = () => {

@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { Pause, Play, Timer } from 'lucide-react';
 import { motion } from 'framer-motion';
 
