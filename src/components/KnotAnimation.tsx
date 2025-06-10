@@ -22,10 +22,13 @@ export const KnotAnimation = ({ currentStep, knotId, totalSteps, onStepChange }:
     const timeout = setTimeout(() => {
       setIsLoading(false);
       setTimeout(() => setIsAnimating(false), 400);
+      
+      // Notify parent about step change completion
+      onStepChange(currentStep);
     }, 300);
     
     return () => clearTimeout(timeout);
-  }, [currentStep]);
+  }, [currentStep, onStepChange]);
 
   return (
     <div className="w-full h-64 md:h-96 lg:h-[28rem] relative flex items-center justify-center">
@@ -60,7 +63,7 @@ export const KnotAnimation = ({ currentStep, knotId, totalSteps, onStepChange }:
               <div 
                 className={`absolute top-4 right-4 bg-blue-600 bg-opacity-80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium border border-blue-400 border-opacity-30 shadow-md ${isAnimating ? 'animate-pulse' : ''}`}
               >
-                Step {currentStep}
+                Step {currentStep} of {totalSteps}
               </div>
             </div>
           </motion.div>
