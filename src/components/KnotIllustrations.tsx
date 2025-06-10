@@ -85,7 +85,7 @@ const BowlineIllustration: FC<StepIllustrationProps> = ({ stepNumber, className 
       case 2:
         return "/images/Bowline2.png";
       case 3:
-        return "/images/Bowline3.png";
+        return "/images/Bowline2.png";
       case 4:
         return "/images/Bowline3.png";
       case 5:
