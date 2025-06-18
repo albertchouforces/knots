@@ -46,7 +46,7 @@ export function App() {
         <footer className="mt-12 py-6 border-t border-gray-200">
           <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
             <p>Naval Knots - Master essential naval knots with interactive tutorials</p>
-            <p className="mt-3 pt-3 border-t border-gray-100">This is a professional development learning project. For more information please contact the Learning Support Centre Product Development Lead (Pacific) at <a href="mailto:joshua.hawthorne@ecn.forces.gc.ca" className="text-blue-500 hover:underline">joshua.hawthorne@ecn.forces.gc.ca</a></p>
+            <p className="mt-3 pt-3 border-t border-gray-100">Product of the Learning Support Centre. For more information please contact the Learning Support Centre Product Development Lead (Pacific) at <a href="mailto:joshua.hawthorne@ecn.forces.gc.ca" className="text-blue-500 hover:underline">joshua.hawthorne@ecn.forces.gc.ca</a></p>
           </div>
         </footer>
       </Router>
