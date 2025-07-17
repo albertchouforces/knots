@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Check, ChevronRight, CircleHelp, House, Image, Info, LifeBuoy, Lightbulb, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, ChevronRight, CircleHelp, LifeBuoy, Lightbulb, X } from 'lucide-react';
 import { scenarios as allScenarios } from '../data/scenarios';
 import { knots as allKnots } from '../data/knots';
 import { Scenario, Knot } from '../types';
@@ -24,7 +24,7 @@ export const ScenariosPage = () => {
   const [scenarios, setScenarios] = useState<Scenario[]>([]);
   // State variables for scenarios page
   const [currentScenarioIndex, setCurrentScenarioIndex] = useState(0);
-  const [hoveredKnotId, setHoveredKnotId] = useState<string | null>(null);
+  // Removed unused hoveredKnotId state
   const [selectedKnotId, setSelectedKnotId] = useState<string | null>(null);
   const [feedbackVisible, setFeedbackVisible] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -38,10 +38,7 @@ export const ScenariosPage = () => {
   const [hasCompletedAllScenarios, setHasCompletedAllScenarios] = useState<boolean>(false);
   const [currentKnotOptions, setCurrentKnotOptions] = useState<Knot[]>([]);
 
-  // Get all knots data 
-  const availableKnots = useMemo(() => {
-    return allKnots;
-  }, []);
+  // Get all knots data directly when needed instead of storing in state
 
   // Initialize shuffled scenarios - only run once on mount
   useEffect(() => {
@@ -291,8 +288,7 @@ export const ScenariosPage = () => {
                   <button
                     key={knot.id}
                     onClick={() => handleKnotSelect(knot.id)}
-                    onMouseEnter={() => setHoveredKnotId(knot.id)}
-                    onMouseLeave={() => setHoveredKnotId(null)}
+                    
                     disabled={feedbackVisible}
                     className={`p-4 text-left rounded-md border transition-colors duration-200 ${
                       selectedKnotId === knot.id 

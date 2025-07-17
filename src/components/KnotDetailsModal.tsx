@@ -37,7 +37,7 @@ export const KnotDetailsModal = ({ knotId, isOpen, onClose }: KnotDetailsModalPr
     return null;
   }
 
-  const handleStepChange = (step: number) => {
+  const handleStepChange = () => {
     // This is called when the animation completes a step change
   };
 
