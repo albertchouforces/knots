@@ -3,6 +3,7 @@ import { knots } from '../data/knots';
 import { KnotCard } from '../components/KnotCard';
 import { Anchor, Filter, Search, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -84,6 +85,32 @@ export const HomePage = () => {
         >
           Master essential naval knots with step-by-step tutorials and practical use cases
         </motion.p>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-6"
+        >
+          <Link 
+            to="/scenarios" 
+            className="group relative overflow-hidden px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-400 inline-block max-w-lg w-full"
+          >
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></span>
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-70 transition-opacity duration-300"></span>
+            <div className="relative z-10">
+              <span className="flex items-center justify-center text-lg">
+                Try Scenarios
+                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+              </span>
+              <span className="block mt-1 text-sm text-blue-100 font-normal">
+                Are you familiar with all the knots? Test yourself on when to apply each knot for a given scenario.
+              </span>
+            </div>
+          </Link>
+        </motion.div>
       </div>
 
       <div className="max-w-4xl mx-auto mb-8">
