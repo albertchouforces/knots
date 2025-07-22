@@ -89,5 +89,13 @@ export const scenarios: Scenario[] = [
     scenario: "You need to prevent the end of a newly cut line from fraying before you can properly whip it.",
     why: "The overhand knot is the simplest of all knots. While not suitable for heavy loads, it's perfect as a temporary stopper to prevent rope ends from unraveling.",
     image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
-  }
+  },
+  {
+    id: "replenishment-at-seas",
+    knot: "round-turn-two-half-hitches",
+    use: "Secure fastening of a rope to a post or ring for sustained load",
+    scenario: "Used in mooring, securing lines during replenishment-at-sea, or when attaching to fixed rings or bitts.",
+    why: "Strong and stable; resists slipping.",
+    image: "images/scenarios/KnotsGraphic.png"
+  },
 ];
