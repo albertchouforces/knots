@@ -275,7 +275,7 @@ export const ScenariosPage = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <p className="text-yellow-800">
-                      <span className="font-medium">Hint:</span> You need a knot that's suitable for {currentScenario?.use.toLowerCase()}.
+                      <span className="font-medium">Hint:</span> You need a knot that's suitable for {currentScenario?.use.toLowerCase()}
                     </p>
                   </motion.div>
                 )}
