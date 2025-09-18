@@ -2,100 +2,59 @@ import { Scenario } from '../types';
 
 export const scenarios: Scenario[] = [
   {
-    id: "mooring-boat",
-    knot: "cleat-hitch",
-    use: "Securing a vessel to a dock",
-    scenario: "You need to secure your boat to a dock cleat during a rising tide where the water level will change significantly over several hours.",
-    why: "The cleat hitch is ideal for securing boats to docks as it creates a secure attachment that can hold under changing tension. It's designed to not slip when properly tied, yet can be quickly released when needed."
-  },
-  {
-    id: "anchor-line",
-    knot: "anchor-hitch",
-    use: "Attaching a line to an anchor",
-    scenario: "You're preparing to drop anchor in a cove with a rocky bottom, and need to ensure the anchor line won't come loose under repeated strain.",
-    why: "The anchor hitch creates a secure connection that won't slip under load and resists the jerking motion that occurs when a boat rides at anchor, especially in changing conditions."
-  },
-  {
-    id: "rescue-operation",
-    knot: "bowline",
-    use: "Creating a secure loop for rescue",
-    scenario: "A crew member has fallen overboard and needs to be pulled back onto the vessel safely.",
-    why: "The bowline creates a fixed loop that won't tighten or constrict when put under load, making it ideal for rescue situations. It's also easily tied with one hand if necessary."
-  },
-  {
-    id: "joining-lines",
+    id: "sheet-bend",
     knot: "sheet-bend",
-    use: "Joining two ropes of different diameters",
-    scenario: "You need to extend a tow line with a rope of a different thickness to reach a disabled vessel.",
-    why: "The sheet bend is specifically designed to securely join ropes of different diameters or materials. It's more reliable than a reef knot when connecting lines of unequal sizes.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
-  },
-  {
-    id: "temporary-mooring",
-    knot: "clove-hitch",
-    use: "Quick temporary fastening",
-    scenario: "You need to temporarily secure your boat to a piling while waiting for a dock to clear.",
-    why: "The clove hitch can be quickly tied and adjusted, making it perfect for temporary mooring. It's easy to untie even after being under load, allowing for quick departure when needed."
-  },
-  {
-    id: "secure-cargo",
-    knot: "truckers-hitch",
-    use: "Securing loads with tension",
-    scenario: "You need to tie down equipment on the deck that must remain absolutely secure during rough seas.",
-    why: "The trucker's hitch creates a mechanical advantage, allowing you to apply and maintain significant tension on the line. This makes it ideal for securing loads that must not shift."
-  },
-  {
-    id: "preventing-fraying",
-    knot: "stopper-knot",
-    use: "Preventing rope from unraveling or slipping through a fairlead",
-    scenario: "You notice a jib sheet is starting to run through a fairlead as the wind increases.",
-    why: "A stopper knot creates a bulky end that prevents a line from completely running through a block, fairlead, or other hardware, preventing potential equipment damage or loss of control."
-  },
-  {
-    id: "tensioning-line",
-    knot: "rolling-hitch",
-    use: "Attaching a line to take strain off another line",
-    scenario: "A dockline is under heavy strain during strong winds, and you need to take some pressure off to adjust it.",
-    why: "The rolling hitch allows you to attach a line to another line under tension. Unlike other knots, it grips well even when the host line is slippery or under load."
-  },
-  {
-    id: "bundling-equipment",
-    knot: "reef-knot",
-    use: "Binding and bundling items together",
-    scenario: "You need to bundle some spare lines together for storage below deck.",
-    why: "The reef knot is ideal for binding packages or bundling items when the load isn't critical. It lies flat and can be easily untied when needed.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
-  },
-  {
-    id: "safety-line",
-    knot: "figure-eight",
-    use: "Creating a stopper knot at the end of a safety line",
-    scenario: "You're setting up jacklines on deck and need to ensure the safety tethers can't pull through the attachment points.",
-    why: "The figure eight creates a reliable stopper knot that won't jam or slip through hardware. It's easy to verify visually and maintains most of the rope's strength.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
-  },
-  {
-    id: "quick-tie-off",
-    knot: "half-hitch",
-    use: "Quick and temporary tie-off",
-    scenario: "You need to quickly secure a fender while approaching a dock.",
-    why: "Half hitches can be tied rapidly for temporary securing. While not suitable for critical loads alone, they're perfect for quick applications when time is limited.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
-  },
-  {
-    id: "basic-knot",
-    knot: "overhand-knot",
-    use: "Simple stopper knot or component of other knots",
-    scenario: "You need to prevent the end of a newly cut line from fraying before you can properly whip it.",
-    why: "The overhand knot is the simplest of all knots. While not suitable for heavy loads, it's perfect as a temporary stopper to prevent rope ends from unraveling.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
-  },
-  {
-    id: "replenishment-at-seas",
-    knot: "round-turn-two-half-hitches",
-    use: "Secure fastening of a rope to a post or ring for sustained load",
-    scenario: "Used in mooring, securing lines during replenishment-at-sea, or when attaching to fixed rings or bitts.",
-    why: "Strong and stable; resists slipping.",
+    use: "Joining two ropes, especially of unequal diameter.",
+    scenario: "While conducting replenishment-at-sea preparations aboard a Halifax-class frigate, you are tasked with securing a lightweight heaving line to a heavier nylon messenger line. The goal is to pass the messenger line across to the replenishment ship using a line-throwing device.",
+    why: "The reef knot is ideal when tying together two ropes of equal size under light load. It lies flat, is easy to tie and untie, and is sufficient for short-term tasks where there’s no heavy pulling or dynamic tension.",
     image: "images/scenarios/KnotsGraphic.png"
+  },
+  {
+    id: "reef-knot",
+    knot: "reef-knot",
+    use: "Tying two ropes of equal diameter together.",
+    scenario: "During post-damage cleanup on the flight deck, you're tasked with securing together two equal-length heaving lines to extend their reach for recovering a flight deck safety net. Minimal strain is expected, and the lines will be manually handled.",
+    why: "The reef knot is ideal when tying together two ropes of equal size under light load. It lies flat, is easy to tie and untie, and is sufficient for short-term tasks where there’s no heavy pulling or dynamic tension.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
+  },
+  {
+    id: "figure-eight",
+    knot: "figure-eight",
+    use: "Preventing a rope from passing through a block or fairlead.",
+    scenario: "While rigging signal halyards on the signal yard, you’re directed to tie stopper knots at the ends of the lines to prevent them from slipping back through fairleads during high winds.",
+    why: "The figure of eight knot forms a bulky, non-jamming stopper that won’t pass through fairleads or blocks under load. It’s simple, effective, and preserves the integrity of the line.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
+  },
+  {
+    id: "clove-hitch",
+    knot: "clove-hitch",
+    use: "Temporarily securing a rope to a spar, rail, or similar fitting.",
+    scenario: "During man-overboard drills, you need to quickly secure a fender to a guardrail to prevent it from banging against the hull. The knot must hold temporarily and allow fast repositioning.",
+    why: "The clove hitch can be tied rapidly and adjusted with ease, making it suitable for temporary fastening. However, it may slip under side load, so it’s best used when the pull is mostly vertical or for short-term use.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
+  },
+  {
+    id: "rolling-hitch",
+    knot: "rolling-hitch",
+    use: "Securing a rope to a spar or another rope under directional strain.",
+    scenario: "While recovering a fouled RHIB davit line, you're ordered to use a secondary rope to take the strain from the winch cable without disturbing the tension. You need the new line to grip securely under directional pull.",
+    why: "The rolling hitch is designed to grip another line or object under directional tension. It resists slipping when load is applied in one direction, making it ideal for transferring or sharing load between ropes.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
+  },
+  {
+    id: "round-turn-two-half-hitches",
+    knot: "round-turn-two-half-hitches",
+    use: "Securing a line to a spar, ring, or shackle.",
+    scenario: "During rough weather, you’re ordered to secure a portable fuel tank to a ring bolt on the deck. The tie-down must hold firm through vibration and movement but also release quickly in case of emergency.",
+    why: "This knot is secure under constant strain and won’t jam. It’s ideal for tying down gear or making fast to fixed points like bollards or padeyes, especially when reliability and quick release are important.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
+  },
+  {
+    id: "bowline",
+    knot: "bowline",
+    use: "Creating a secure, non-tightening loop at the end of a rope.",
+    scenario: "During a man-overboard recovery drill, you’re instructed to tie a loop around a sailor’s torso for hoisting with a rescue davit. The loop must stay secure without tightening around the person.",
+    why: "The bowline forms a fixed loop that won’t constrict under tension. It’s secure yet easy to untie, even after being loaded, making it a go-to knot for rescue and lifeline scenarios.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/70/HMCS_Regina_in_2025.jpg"
   },
 ];
