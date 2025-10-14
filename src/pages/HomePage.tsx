@@ -4,12 +4,28 @@ import { KnotCard } from '../components/KnotCard';
 import { Anchor, Filter, Search, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { isFeatureEnabled } from '../services/featureFlags';
+import { AdminFeatureToggle } from '../components/AdminFeatureToggle';
 
 export const HomePage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [difficulty, setDifficulty] = useState<string | null>(null);
   const [availableKnots, setAvailableKnots] = useState(knots);
   const [visibleKnotCount, setVisibleKnotCount] = useState(0);
+  const [scenariosEnabled, setScenariosEnabled] = useState(true);
+  
+  // Check if scenarios feature is enabled
+  useEffect(() => {
+    setScenariosEnabled(isFeatureEnabled('enableScenarios'));
+    
+    // Listen for storage events to update UI if feature flags change in another tab
+    const handleStorageChange = () => {
+      setScenariosEnabled(isFeatureEnabled('enableScenarios'));
+    };
+    
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   // Filter and sort knots based on search term and difficulty
   useEffect(() => {
@@ -60,7 +76,10 @@ export const HomePage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col items-center text-center mb-10">
+      <div className="flex flex-col items-center text-center mb-10 relative">
+        <div className="absolute top-0 right-0">
+          <AdminFeatureToggle />
+        </div>
         <motion.div 
           className="flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4"
           initial={{ scale: 0.8, opacity: 0 }}
@@ -86,31 +105,36 @@ export const HomePage = () => {
           Master essential naval knots with step-by-step tutorials and practical use cases
         </motion.p>
         
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-6"
-        >
-          <Link 
-            to="/scenarios" 
-            className="group relative overflow-hidden px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-400 inline-block max-w-lg w-full"
-          >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></span>
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-70 transition-opacity duration-300"></span>
-            <div className="relative z-10">
-              <span className="flex items-center justify-center text-lg">
-                Try Scenarios
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                </svg>
-              </span>
-              <span className="block mt-1 text-sm text-blue-100 font-normal">
-                Are you familiar with all the knots? Test yourself on when to apply each knot for a given scenario.
-              </span>
-            </div>
-          </Link>
-        </motion.div>
+        <AnimatePresence>
+          {scenariosEnabled && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20, height: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-6"
+            >
+              <Link 
+                to="/scenarios" 
+                className="group relative overflow-hidden px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-400 inline-block max-w-lg w-full"
+              >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></span>
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-70 transition-opacity duration-300"></span>
+                <div className="relative z-10">
+                  <span className="flex items-center justify-center text-lg">
+                    Try Scenarios
+                    <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                  </span>
+                  <span className="block mt-1 text-sm text-blue-100 font-normal">
+                    Are you familiar with all the knots? Test yourself on when to apply each knot for a given scenario.
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <div className="max-w-4xl mx-auto mb-8">
