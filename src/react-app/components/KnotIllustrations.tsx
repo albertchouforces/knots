@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IllustrationWrapper } from './IllustrationWrapper';
+import { IllustrationWrapper } from '@/react-app/components/IllustrationWrapper';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -81,17 +81,17 @@ const BowlineIllustration: FC<StepIllustrationProps> = ({ stepNumber, className 
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "/images/Bowline1.png";
+        return "/images/bowline1.png";
       case 2:
-        return "/images/Bowline2.png";
+        return "/images/bowline2.png";
       case 3:
-        return "/images/Bowline2.png";
+        return "/images/bowline2.png";
       case 4:
-        return "/images/Bowline3.png";
+        return "/images/bowline3.png";
       case 5:
-        return "/images/Bowline4.png";
+        return "/images/bowline4.png";
       default:
-        return "/images/Bowline4.png";
+        return "/images/bowline4.png";
     }
   };
 

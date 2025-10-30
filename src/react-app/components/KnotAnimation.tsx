@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { KnotIllustration } from './KnotIllustrations';
+import { KnotIllustration } from '@/react-app/components/KnotIllustrations';
 
 interface KnotAnimationProps {
   currentStep: number;

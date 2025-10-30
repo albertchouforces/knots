@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { knots } from '../data/knots';
-import { KnotStep } from '../components/KnotStep';
-import { KnotAnimation } from '../components/KnotAnimation';
-import { UseCasesList } from '../components/UseCasesList';
-import { AutoPlayControls } from '../components/AutoPlayControls';
+import { knots } from '@/react-app/data/knots';
+import { KnotStep } from '@/react-app/components/KnotStep';
+import { KnotAnimation } from '@/react-app/components/KnotAnimation';
+import { UseCasesList } from '@/react-app/components/UseCasesList';
+import { AutoPlayControls } from '@/react-app/components/AutoPlayControls';
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const KnotDetailPage = () => {

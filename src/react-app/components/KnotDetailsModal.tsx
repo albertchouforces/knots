@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { knots } from '../data/knots';
+import { knots } from '@/react-app/data/knots';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { KnotAnimation } from './KnotAnimation';
-import { KnotStep } from './KnotStep';
-import { UseCasesList } from './UseCasesList';
+import { KnotAnimation } from '@/react-app/components/KnotAnimation';
+import { KnotStep } from '@/react-app/components/KnotStep';
+import { UseCasesList } from '@/react-app/components/UseCasesList';
 
 interface KnotDetailsModalProps {
   knotId: string;

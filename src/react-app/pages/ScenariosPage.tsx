@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Check, ChevronRight, CircleHelp, LifeBuoy, Lightbulb, X } from 'lucide-react';
-import { scenarios as allScenarios } from '../data/scenarios';
-import { knots as allKnots } from '../data/knots';
-import { Scenario, Knot } from '../types';
-import { KnotDetailsModal } from '../components/KnotDetailsModal';
-import ScenarioImage from '../components/ScenarioImage';
-import ScenarioSummaryModal from '../components/ScenarioSummaryModal';
+import { scenarios as allScenarios } from '@/react-app/data/scenarios';
+import { knots as allKnots } from '@/react-app/data/knots';
+import { Scenario, Knot } from '@/react-app/types';
+import { KnotDetailsModal } from '@/react-app/components/KnotDetailsModal';
+import ScenarioImage from '@/react-app/components/ScenarioImage';
+import ScenarioSummaryModal from '@/react-app/components/ScenarioSummaryModal';
 
 // Function to shuffle an array (Fisher-Yates algorithm)
 const shuffleArray = <T,>(array: T[]): T[] => {

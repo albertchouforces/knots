@@ -1,4 +1,4 @@
-import { Knot } from '../types';
+import { Knot } from '@/react-app/types';
 
 export const knots: Knot[] = [
   {

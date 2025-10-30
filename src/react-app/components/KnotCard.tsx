@@ -1,4 +1,4 @@
-import { Knot } from '../types';
+import { Knot } from '@/react-app/types';
 import { Anchor, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
