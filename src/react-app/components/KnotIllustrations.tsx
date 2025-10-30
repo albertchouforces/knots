@@ -131,17 +131,17 @@ const BowlineIllustration: FC<StepIllustrationProps> = ({ stepNumber, className 
   const getStepImageUrl = (step: number) => {
     switch (step) {
       case 1:
-        return "/images/sbowline1.png";
+        return "/images/bowline1.png";
       case 2:
-        return "/images/sbowline2.png";
+        return "/images/bowline2.png";
       case 3:
-        return "/images/sbowline2.png";
+        return "/images/bowline2.png";
       case 4:
-        return "/images/sbowline3.png";
+        return "/images/bowline3.png";
       case 5:
-        return "/images/sbowline4.png";
+        return "/images/bowline4.png";
       default:
-        return "/images/sbowline4.png";
+        return "/images/bowline4.png";
     }
   };
 
